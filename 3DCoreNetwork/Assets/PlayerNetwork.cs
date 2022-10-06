@@ -6,7 +6,20 @@ using UnityEngine;
 
 public class PlayerNetwork : NetworkBehaviour
 {
-    public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+    private void Update()
+    {
+        if (!IsLocalPlayer)
+        {
+            return;
+        }
+
+        var x = Input.GetAxis("Horizontal") * 0.1f;
+        var z = Input.GetAxis("Vertical") * 1f;
+        
+        transform.Translate(x,0,z);
+    }
+
+    /*public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
     private Vector3 lastPosToMoveTO = new Vector3();
 
     /*public override void OnNetworkSpawn()
@@ -15,7 +28,7 @@ public class PlayerNetwork : NetworkBehaviour
         {
             Move();
         }
-    }*/
+    }#1#
 
 
     public void Move(Vector3 moveDir)
@@ -73,6 +86,6 @@ public class PlayerNetwork : NetworkBehaviour
             {
                 transform.position = Position.Value;
             }
-        }*/
-    }
+        }#1#
+    }*/
 }
