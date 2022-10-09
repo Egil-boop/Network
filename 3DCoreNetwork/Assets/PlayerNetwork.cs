@@ -6,17 +6,19 @@ using UnityEngine;
 
 public class PlayerNetwork : NetworkBehaviour
 {
+    
     private void Update()
     {
-        if (!IsLocalPlayer)
+        if (!IsOwner)
         {
             return;
         }
 
-        var x = Input.GetAxis("Horizontal") * 0.1f;
+        var x = Input.GetAxis("Horizontal") * 1f;
         var z = Input.GetAxis("Vertical") * 1f;
-        
-        transform.Translate(x,0,z);
+
+
+        transform.position += new Vector3(x, 0, z) * 2 * Time.deltaTime;
     }
 
     /*public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
