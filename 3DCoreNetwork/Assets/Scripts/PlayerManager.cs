@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 
 [RequireComponent(typeof(NetworkObject))]
-    public class PlayerManager : Singelton<PlayerManager>
+    public class PlayerManager : NetworkSingelton<PlayerManager>
     {
         private NetworkVariable<int> playersInGame = new NetworkVariable<int>();
 

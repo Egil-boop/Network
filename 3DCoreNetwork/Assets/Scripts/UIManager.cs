@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button startHost;
     [SerializeField] private Button startClient;
 
+    [SerializeField] private Button executePhysicsButton;
     [SerializeField] private TextMeshProUGUI playerInGameText;
 
     private void Awake()
@@ -58,6 +59,13 @@ public class UIManager : MonoBehaviour
             else
             {
             }
+        }));
+        
+        
+        executePhysicsButton.onClick.AddListener((() =>
+        {
+        
+            
         }));
     }
 }

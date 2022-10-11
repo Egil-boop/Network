@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class Logger : Singelton<Logger>
+public class Logger : NetworkSingelton<Logger>
 {
     [SerializeField]
     private TextMeshProUGUI debugAreaText = null;

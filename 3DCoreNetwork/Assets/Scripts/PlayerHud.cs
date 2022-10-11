@@ -16,9 +16,8 @@ public class PlayerHud : NetworkBehaviour
     {
         if (IsServer)
         {
-            
             playerName.Value = $"Player {OwnerClientId}";
-           // Debug.Log(playerName.Value + " Is it empty?");
+            // Debug.Log(playerName.Value + " Is it empty?");
         }
     }
 
@@ -32,7 +31,7 @@ public class PlayerHud : NetworkBehaviour
     {
         if (!overlaySet && !string.IsNullOrEmpty(playerName.Value))
         {
-           // Debug.Log("set Text?");
+            // Debug.Log("set Text?");
             SetOverlay();
             overlaySet = true;
         }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class Singelton<T>
+    public class NetworkSingelton<T>
 :    NetworkBehaviour
         where T : Component
     {
